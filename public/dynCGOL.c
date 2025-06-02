@@ -42,6 +42,7 @@ int main ( int argc, char *argv[] ) {
    int index2;
    int ticks = 1;
    char *worldOne[ROWS][COLLUMNS];
+   char *worldOneCopy[ROWS][COLLUMNS];
    char *updatedWorld[ROWS][COLLUMNS];
 
 	if ( (f = fopen(filename, "r")) != NULL ){
@@ -69,16 +70,17 @@ int main ( int argc, char *argv[] ) {
 	    while (index1 < strlen(line)){
 	        if (line[index1] == 49){
 	            worldOne[row][collumn] = "X";
+				worldOneCopy[row][collumn] = "X";
 	            collumn++;			/*converts 1s an 0s to Xs and blanks*/
 	        }else if (line[index1] == 48){
 	            worldOne[row][collumn] = " ";
+				worldOneCopy[row][collumn] = " ";
 	            collumn++;
 	        }
 	        index1++;
             }
 	    row++;
-        }
-
+    }
 
 
 
@@ -103,6 +105,14 @@ int main ( int argc, char *argv[] ) {
    //}else if ( (strcmp(start , "y") == 0) || (strcmp(start , "Y") == 0)){
  	  while(cont1 == 1){
 	   //for(index2 = 0; index2 < numTicks;index2++){
+		if(ticks >= 100){
+			for (i = 0; i < ROWS; i++){
+		    	for (j = 0; j < COLLUMNS; j++){
+					worldOne[i][j] = worldOneCopy[i][j];
+				}
+			}
+			ticks = 0;
+		}
 		for (i = 0; i < ROWS; i++){
 		    for (j = 0; j < COLLUMNS; j++){	/*below the program defines how many dead or alive*/
 			liveCells = 0;			/*neighbours each cell has*/
@@ -394,7 +404,13 @@ int main ( int argc, char *argv[] ) {
 			if(j == 0){
 			    printf("|");
 			}
-			printf("%s",updatedWorld[i][j]); /*prints the new world + sides of box*/
+			if(*updatedWorld[i][j] == 'X'){
+				printf("\u2588");
+			}
+			else{
+				printf("%s",updatedWorld[i][j]); /*prints the new world + sides of box*/
+			}
+			
 			if(j == COLLUMNS - 1){
 			    printf("|");
 			}
@@ -413,7 +429,7 @@ int main ( int argc, char *argv[] ) {
 
 	   //system("sleep 2"); /*system pauses and repeats as specified*/
 	   //sleep(1);  
-	   emscripten_sleep(500);
+	   emscripten_sleep(250);
 	   printf("\n[CLEAR_SCREEN]\n");
 	   ticks++;
 		
