@@ -8,9 +8,6 @@ function Header() {
         <h1 className="px-7 text-2xl font-bold text-green-400">Roman.dev</h1>
         <nav className="px-7 space-x-6 text-m text-green-200">
           <Link to="/" className="hover:text-white transition">Home</Link>
-          <Link to="/" className="hover:text-white transition">About Me</Link>
-          <Link to="/" className="hover:text-white transition">My Files</Link>
-          <Link to="/" className="hover:text-white transition">Contact Me</Link>
           {/* Add more links if you add more pages */}
         </nav>
       </div>

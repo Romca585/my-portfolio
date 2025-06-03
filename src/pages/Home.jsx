@@ -3,6 +3,7 @@ import CgolWidget from '../components/CgolWidget';
 
 function Home() {
   return (
+    
     <div className="relative">
       <div className="relative w-full h-[300px]">
         <CgolWidget />
@@ -17,7 +18,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="w-full h-[100vw] bg-[#171717] p-10">
+      <div className="bg-[#171717] p-10">
          <div className= "flex items-center justify-center">
             <div className="flex flex-col md:flex-row items-start gap-2">
                 
