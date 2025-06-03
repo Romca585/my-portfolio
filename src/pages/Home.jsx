@@ -22,15 +22,21 @@ function Home() {
          <div className= "flex items-center justify-center">
             <div className="flex flex-col md:flex-row items-start gap-2">
                 
-                <p className="text-m max-w-[20vw] text-green-200">
+                <p className="text-m max-w-[40vw] text-green-200">
                   <span className="text-3xl font-bold text-green-400">About Me </span>
                     <br /><br />
                     Hello, I'm a Software Developer from Ontario, Canada with
                     a recent bachelor's degree in Computer Science from the University of Guelph.
                     <br /><br />
-                    I have worked on numerous interesting projects ranging from
-                    research and development, reverse engineering roles and a web development role where
-                    I created a web application from scratch
+                    I have hands-on experience in web development, reverse engineering, and research/development.
+                    
+                    I have developed full-stack web applications using modern frameworks and technologies,
+                    focusing on functionality, performance, and user experience.
+                    I've also contributed to research projects involving high-performance computing and parallelization,
+                    applying problem-solving skills to optimize complex systems and processes.
+                    <br /><br />
+                    I’m passionate about solving complex problems and learning new technologies quickly. Skills I have proven through both academic research and real world development work.
+                    Whether it’s rewriting libraries for better performance or designing UI components, I love diving deep and delivering results.
                 </p>
                 <div className="flex flex-row items-start gap-6 bg-green-300 bg-opacity-30 p-4 rounded-xl shadow-lg">
                     <div className="flex items-center justify-center">
