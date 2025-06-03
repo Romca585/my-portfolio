@@ -22,7 +22,7 @@ function Home() {
          <div className= "flex items-center justify-center">
             <div className="flex flex-col md:flex-row items-start gap-2">
                 
-                <p className="text-m max-w-[40vw] text-green-200">
+                <p className="text-[15px] max-w-[40vw] text-green-200">
                   <span className="text-3xl font-bold text-green-400">About Me </span>
                     <br /><br />
                     Hello, I'm a Software Developer from Ontario, Canada with
