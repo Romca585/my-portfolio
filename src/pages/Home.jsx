@@ -63,7 +63,7 @@ function Home() {
                             <div className="font-medium border-b border-green-600 py-2">Email :</div>
                             <div className="border-b border-green-600 py-2">roman.r.savelyev@gmail.com</div>
 
-                            <div className="font-medium border-b border-green-600 py-2">Origin :</div>
+                            <div className="font-medium border-b border-green-600 py-2">Residence :</div>
                             <div className="border-b border-green-600 py-2">Ontario, Canada</div>
                         </div>
 
