@@ -1,7 +1,37 @@
 import React from 'react';
+import { useState, useEffect } from "react";
 import CgolWidget from '../components/CgolWidget';
 
 function Home() {
+
+  const birthDate = new Date("2001-01-10");
+
+  const calcAge = () => {
+    const today = new Date();
+    let years = today.getFullYear() - birthDate.getFullYear();
+    const hasBirthdayPassed =
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() &&
+        today.getDate() >= birthDate.getDate());
+    if (!hasBirthdayPassed) years--;
+    return years;
+  };
+
+  const [age, setAge] = useState(calcAge());
+
+  useEffect(() => {
+    const now = new Date();
+    const nextRefresh = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate() + 1,
+      0, 0, 1
+    );
+    const timeoutMs = nextRefresh - now;
+    const timer = setTimeout(() => setAge(calcAge()), timeoutMs);
+    return () => clearTimeout(timer);
+  }, [birthDate]);
+
   return (
     
     <div className="relative">
@@ -55,7 +85,7 @@ function Home() {
                             <div className="border-b border-green-600 py-2">Roman Savelyev</div>
 
                             <div className="font-medium border-b border-green-600 py-2">Age :</div>
-                            <div className="border-b border-green-600 py-2">24 Years</div>
+                            <div className="border-b border-green-600 py-2">{age} Years</div>
 
                             <div className="font-medium border-b border-green-600 py-2">Phone :</div>
                             <div className="border-b border-green-600 py-2">+1 226-868-0756</div>
